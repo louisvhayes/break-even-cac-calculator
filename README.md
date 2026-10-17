@@ -1,19 +1,30 @@
-# Break-even CAC Calculator
+# Subscription Economics Calculator
 
-A standalone, responsive calculator for subscription businesses. Enter price, contribution margin, monthly paid churn, CAC, and a one-off campaign setup cost to calculate the minimum **whole number of paying subscribers** required to break even.
+An interactive, single-file HTML dashboard for subscription economics, based on the supplied **Subscription Economics Calculator (soft dark)**.
+
+## Features
+
+- Constant and changing monthly churn models
+- Churn-before-payment and payment-before-churn timing
+- Initial users, subscription fraction, price, contribution margin, CAC, and one-off implementation cost
+- Expected payers, payments, revenue, contribution, LTV, and net project value
+- First-T-payment calculations and a payment-by-payment breakdown for variable churn
+- Starred metrics, copyable results, and a custom on-screen numeric keyboard
 
 ## Run locally
-Open `index.html` in your browser. No dependencies, API keys, tracking, or build step required.
 
-## Publish with GitHub Pages
-1. In repository **Settings → Pages**, choose **Deploy from a branch**, branch `main`, folder `/ (root)`, then Save.
-2. Once deployment finishes, the calculator will be available at https://louisvhayes.github.io/break-even-cac-calculator/
+Open `index.html` directly in any modern browser. No build step or dependencies are necessary.
 
-## Model
-- Contribution LTV = monthly price × contribution margin / monthly paid churn.
-- Incremental contribution per customer = contribution LTV − CAC.
-- Break-even subscriber count = round up(fixed setup cost / incremental contribution per customer).
+## Publish using GitHub Pages
 
-Assumptions: month-start payments; churn after payment; constant price, churn, and margin; undiscounted cash flows; fixed cost additional to per-subscriber CAC. If contribution LTV is at or below CAC, a campaign with positive fixed setup costs cannot break even within this model.
+Go to **Settings → Pages → Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
 
-This tool is intended for education, not financial advice.
+Once GitHub Pages finishes deployment, the intended URL is:
+
+https://louisvhayes.github.io/break-even-cac-calculator/
+
+## Assumptions
+
+Refer to the assumptions inside the calculator. It models undiscounted cash flows and differs by selected churn/payment timing. CAC is entered per initial user; the fixed one-off implementation cost is deducted once. For changing churn, a finite payment horizon is used.
+
+The calculator is a learning aid for evaluating subscription economics.
